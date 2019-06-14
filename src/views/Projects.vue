@@ -1,5 +1,6 @@
 <template>
   <div class="projects">
+   
     <h1>This is an projects page</h1>
 
     <!--RUTAS DINAMICAS:: Dentro de la etiqueta(router-link) tendremos que recorrer 
@@ -10,7 +11,7 @@
     llamado en este caso(id) y acontinuacion tenemos que darle el valor de(proyect) que sera el valor de cada(id).-->
 
     <router-link
-      :to="{ name: 'projects',params: { id : project.description }}"
+      :to="{ name:'projects',params: { id : project.description }}"
       v-for="(project,index) in projects"
       :key="index"
     > | {{ project.name }} | </router-link>
@@ -19,12 +20,14 @@
 </template>
 
 <script>
+
 import Project from "../components/Project";
 
 export default {
   name: "Projects",
   components: {
-    Project
+    Project,
+    
   },
 
   data() {
@@ -51,6 +54,9 @@ export default {
 </script>
 
 <style>
+.projects{
+  text-align: center;
+}
 .router-link-active {
   color: red;
   text-decoration: none
