@@ -6,23 +6,14 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat v-for="link in links" :key="link.id" :to="`${link.page}`">{{link.name}}</v-btn>
+        <v-list></v-list>
       </v-toolbar-items>
     </v-toolbar>
-    
+
     <v-navigation-drawer app v-model="drawer" temporary dark>
       <p>asdfa</p>
     </v-navigation-drawer>
   </v-container>
-
-  <!--<router-link to="/"> Home </router-link>|
-    <router-link to="/about"> About </router-link>|
-    <router-link to="/contact"> Contact </router-link>|
-  <router-link to="/projects"> Projects </router-link>-->
-
-  <!--esto seria igual que lo de arriba
-    <router-link v-for="link in links" 
-             :key="link.id" 
-  :to="`${link.page}`">| {{link.name}} </router-link>-->
 </template>
 
 <script>
@@ -51,7 +42,7 @@ export default {
         {
           id: 3,
           name: "Projects",
-          page: "/projects"
+          page: "/projects/neur-on"
         }
       ]
     };

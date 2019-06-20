@@ -29,11 +29,17 @@ export default new Router({
     },
     {
       //RUTA DINAMICA::ahora hay un segundo parametro una variable(:id).
-      path: "/projects/:id?",
+      path: "/projects/:id",
       name: "projects",
       component: () =>
         import("./views/Projects.vue")
     },
-    
+    //  {
+    //   //RUTA DINAMICA::ahora hay un segundo parametro una variable(:id).
+    //   path: "/projects/:id",
+    //   name: "project",
+    //   component: () =>
+    //     import("./components/Project.vue")
+    // },
   ]
 });
