@@ -1,8 +1,9 @@
 <template>
+<div class="Project">
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-img :src="image" height="200px"></v-img>
+        <v-img :src="image" height="300px"></v-img>
 
         <v-card-title primary-title>
           <div>
@@ -25,6 +26,7 @@
       </v-card>
     </v-flex>
   </v-layout>
+  </div>
 </template>
 
 <script>
@@ -52,3 +54,11 @@ export default {
 };
 </script>
 
+
+<style lang="scss">
+.Project{
+  margin-top: 100px;
+  
+}
+
+</style>

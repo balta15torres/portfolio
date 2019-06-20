@@ -1,17 +1,17 @@
 <template>
-  <div class="contact">
-    
-    <h1>This is an contact page</h1>
+    <CardContact/>
   </div>
 </template>
 
 <script>
 
-
+import CardContact from "@/components/CardContact"
 
 export default {
   name: "Contact",
-  
+  components:{
+    CardContact
+  }
 };
 </script>
 

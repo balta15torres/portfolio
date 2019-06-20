@@ -1,19 +1,11 @@
 <template>
-  <v-container>
-    <v-toolbar dark>
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>BTS</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="link in links" :key="link.id" :to="`${link.page}`">{{link.name}}</v-btn>
-        <v-list></v-list>
-      </v-toolbar-items>
-    </v-toolbar>
-
-    <v-navigation-drawer app v-model="drawer" temporary dark>
-      <p>asdfa</p>
-    </v-navigation-drawer>
-  </v-container>
+  <div class="Navbar">
+    <ul class="Navbar__Buttons">
+      <li v-for="link in links" :key="link.id">
+        <router-link :to="`${link.page}`">{{link.name}}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -51,15 +43,41 @@ export default {
 </script>
 
 <style lang="scss">
-.nav {
-  padding: 30px;
-  background-color: grey;
-  text-align: end;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+.Navbar {
+  background: $grey-navbar;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  .Navbar__Buttons {
+    display: flex;
+    justify-items: center;
+    height: 80px;
+    width: 32%;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 15px auto;
+    text-transform: uppercase;
+    list-style: none;
+    padding-left: 0;
+    margin-right: 0;
+    li {
+      width: 100%;
+      height: 100%;
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+        a {
+          color: white;
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }
