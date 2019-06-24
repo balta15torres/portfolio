@@ -1,8 +1,8 @@
 <template>
   <div class="Navbar">
     <ul class="Navbar__Buttons">
-      <li v-for="link in links" :key="link.id">
-        <router-link :to="`${link.page}`">{{link.name}}</router-link>
+      <li v-for="link in links" :class="getClass(link.page)" :key="link.id">
+        <router-link :to="{name: link.page, params: link.params}">{{link.name}}</router-link>
       </li>
     </ul>
   </div>
@@ -19,25 +19,31 @@ export default {
         {
           id: 0,
           name: "Home",
-          page: "/"
+          page: "home"
         },
         {
           id: 1,
           name: "About",
-          page: "/about"
+          page: "about"
         },
         {
           id: 2,
-          name: "Contact",
-          page: "/contact"
+          name: "Projects",
+          page: "projects",
+          params: { id: "neur-on" }
         },
         {
           id: 3,
-          name: "Projects",
-          page: "/projects/neur-on"
+          name: "Contact",
+          page: "contact"
         }
       ]
     };
+  },
+  methods: {
+    getClass(page) {
+      return { active: page === this.$route.name };
+    }
   }
 };
 </script>
@@ -59,6 +65,9 @@ export default {
     list-style: none;
     padding-left: 0;
     margin-right: 0;
+    .active {
+      background: rgba(255, 255, 255, 0.12);
+    }
     li {
       width: 100%;
       height: 100%;

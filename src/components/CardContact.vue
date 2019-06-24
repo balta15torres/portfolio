@@ -1,28 +1,25 @@
 <template>
   <div class="CardContact">
-    <div class="CardContact__title">
-      <h3>CONTACT</h3>
-    </div>
     <div class="CardContact__card">
       <v-layout row>
         <v-flex xs12 sm6 offset-sm3>
           <v-card>
             <div class="effect thurio">
               <div class="buttons">
-                <a href="#" class="fb" title="Join us on Facebook">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                <a href="https://www.facebook.com/baltasar.t.garcia" target="_blank" class="fb" title="Join us on Facebook">
+                  <img src="/icons/facebook.svg" alt="">
                 </a>
-                <a href="#" class="tw" title="Join us on Twitter">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                <a href="#" target="_blank" class="tw" title="Join us on Twitter">
+                  <img src="/icons/twitter.svg" alt="">
                 </a>
-                <a href="#" class="g-plus" title="Join us on Google+">
-                  <i class="fa fa-google-plus" aria-hidden="true"></i>
+                <a href="#" target="_blank" class="g-plus" title="Join us on Google+">
+                  <img src="/icons/gmail.svg" alt="">
                 </a>
-                <a href="#" class="insta" title="Join us on Instagram">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                <a href="#" target="_blank" class="insta" title="Join us on Instagram">
+                  <img src="/icons/instagram.svg" alt="">
                 </a>
-                <a href="#" class="in" title="Join us on Linked In">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                <a href="https://es.linkedin.com/in/baltasar-torres-garcia" target="_blank" class="in" title="Join us on Linked In">
+                  <img src="/icons/linkedin.svg" alt="">
                 </a>
               </div>
             </div>
@@ -64,18 +61,7 @@ export default {
 <style lang="scss">
 .CardContact {
   margin-top: 50px;
-  .CardContact__title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $grey-navbar;
-    color: white;
-    height: 50px;
-    width: 500px;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    margin: 15px auto;
-  }
+  
   .CardContact__card {
     margin-top: 100px;
     .effect {
@@ -103,9 +89,10 @@ export default {
         color: $grey-navbar; //or change to your own color
         border: 2px solid white; //or change to your own color
         
-        i {
+        img {
           position: relative;
           z-index: 3;
+          width: 90px;
         }
         &:last-child {
           margin-right: 0px;
@@ -116,7 +103,7 @@ export default {
           height: 100%;
           vertical-align: middle;
         }
-        i {
+        img {
           display: inline-block;
           vertical-align: middle;
         }
@@ -128,7 +115,7 @@ export default {
     a {
       transition: border-radius 0.2s linear 0s;
       transform: rotate(45deg);
-      i {
+      img {
         transition: transform 0.01s linear 0s;
         transform: rotate(-45deg);
       }
